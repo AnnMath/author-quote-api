@@ -5,6 +5,9 @@ export async function GET(request: Request) {
   const { id, quote, book, author } = quotes[randomIndex]
   return new Response(JSON.stringify({ id, quote, book, author }), {
     status: 200,
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
   })
 }
